@@ -32,8 +32,8 @@ body {
     "Times New Roman", serif;
   color: var(--text);
   background: var(--bg);
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: 1.5rem;
+  line-height: 1.3;
   padding: 2rem 1.5rem;
   max-width: var(--max-width);
   margin: 0 auto;
