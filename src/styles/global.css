@@ -10,7 +10,7 @@ body {
   font-family: var(--font-family);
   color: var(--text);
   background: var(--bg);
-  font-size: var(--font-size);
+  font-size: var(--font-body);
   line-height: var(--line-height);
   padding: var(--spacing-body);
   max-width: var(--max-width);
@@ -40,30 +40,30 @@ main {
 
 .post-list time {
   color: var(--text-muted);
-  font-size: var(--font-small);
+  font-size: var(--font-sm);
 }
 
 /* Post content */
 article h1 {
-  font-size: var(--font-size);
+  font-size: var(--font-xl);
   margin-bottom: 0.25rem;
 }
 
 article .post-date {
   color: var(--text-muted);
-  font-size: var(--font-small);
+  font-size: var(--font-sm);
   margin-bottom: var(--spacing-heading-top-lg);
   display: block;
 }
 
 article h2 {
-  font-size: 1.25rem;
+  font-size: var(--font-lg);
   margin-top: var(--spacing-heading-top-lg);
   margin-bottom: var(--spacing-heading-bottom);
 }
 
 article h3 {
-  font-size: 1.1rem;
+  font-size: var(--font-md);
   margin-top: var(--spacing-heading-top-sm);
   margin-bottom: var(--spacing-heading-bottom);
 }
