@@ -6,6 +6,20 @@
   box-sizing: border-box;
 }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.5rem 1rem;
+  background: var(--bg);
+  color: var(--text);
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
 body {
   font-family: var(--font-family);
   color: var(--text);
@@ -21,6 +35,13 @@ a {
   color: var(--link);
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
 header nav a {
   text-decoration: none;
   font-weight: 600;
@@ -28,6 +49,15 @@ header nav a {
 
 main {
   margin-top: var(--spacing-main-top);
+}
+
+footer {
+  margin-top: var(--spacing-heading-top-lg);
+  padding-top: var(--spacing-content-gap);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: var(--font-sm);
+  font-style: italic;
 }
 
 /* Post list */

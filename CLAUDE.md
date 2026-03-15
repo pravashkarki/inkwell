@@ -8,7 +8,7 @@ This file gives an AI assistant everything it needs to understand, maintain, and
 
 Repo: https://github.com/pravashkarki/inkwell
 Author: [Pravo](https://www.linkedin.com/in/pravasho/)
-License: Unlicense (public domain)
+License: MIT
 
 ## Stack
 
@@ -116,7 +116,6 @@ Semver: vMAJOR.MINOR.PATCH
 - Start with a verb: Add, Fix, Update, Remove, Move
 - Include `[build]` only when Vercel should deploy
 - No co-author tags
-- No emdashes in any content
 
 ## Commands
 
