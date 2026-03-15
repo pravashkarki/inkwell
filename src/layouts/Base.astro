@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { site, scheme, colorSchemes } from "../config";
+import { site, colors, tokens_ as t } from "../config";
 
 interface Props {
   title: string;
@@ -9,7 +9,6 @@ interface Props {
 }
 
 const { title, description, mdUrl } = Astro.props;
-const colors = colorSchemes[scheme];
 ---
 
 <!doctype html>
@@ -28,6 +27,21 @@ const colors = colorSchemes[scheme];
         --link: ${colors.light.link};
         --border: ${colors.light.border};
         --code-bg: ${colors.light.codeBg};
+        --font-family: ${t.typography.fontFamily};
+        --font-size: ${t.typography.fontSize};
+        --line-height: ${t.typography.lineHeight};
+        --font-small: ${t.typography.small};
+        --font-code: ${t.typography.code};
+        --spacing-body: ${t.spacing.body};
+        --max-width: ${t.spacing.maxWidth};
+        --spacing-main-top: ${t.spacing.mainTop};
+        --spacing-list-gap: ${t.spacing.listGap};
+        --spacing-content-gap: ${t.spacing.contentGap};
+        --spacing-heading-top-lg: ${t.spacing.headingTopLg};
+        --spacing-heading-top-sm: ${t.spacing.headingTopSm};
+        --spacing-heading-bottom: ${t.spacing.headingBottom};
+        --radius-code: ${t.radii.code};
+        --radius-pre: ${t.radii.pre};
       }
       @media (prefers-color-scheme: dark) {
         :root {

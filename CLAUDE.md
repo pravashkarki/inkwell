@@ -8,42 +8,56 @@ A minimal personal site. Markdown files are the source of truth. Every page is s
 
 ## Stack
 
-- **Astro** -static site generator (markdown-first)
-- **Vercel** -hosting, auto-deploys from GitHub
-- **Plain CSS** -single stylesheet, no framework
-- **pnpm** -package manager
+- **Astro** - static site generator (markdown-first)
+- **Vercel** - hosting, auto-deploys from GitHub
+- **Plain CSS** - single stylesheet, no framework
+- **pnpm** - package manager
 
 ## Project structure
 
 ```
+token.json               → design tokens (colors, typography, spacing) - syncs with Figma
 src/
-  config.ts            → site name, URL, description, color schemes (edit this to make it yours)
+  config.ts              → site identity (name, URL) + reads token.json
   content/
-    posts/             → blog posts as .md files (the only thing you edit day-to-day)
+    posts/               → blog posts as .md files
   layouts/
-    Base.astro         → shared HTML shell, theme picker, <link rel="alternate"> for .md URLs
+    Base.astro           → shared HTML shell, injects tokens as CSS vars
   pages/
-    index.astro        → homepage, lists all posts sorted by date
+    index.astro          → homepage, lists all posts sorted by date
     posts/
-      [...slug].astro  → renders individual post pages
+      [...slug].astro    → renders individual post pages
   integrations/
-    copy-markdown.ts   → build plugin that copies raw .md files to output
+    copy-markdown.ts     → build plugin that copies raw .md files to output
   styles/
-    global.css         → all styles, typography-focused, system serif font, 640px max width
-public/                → static assets (images, favicon)
-astro.config.mjs       → Astro config, pulls site URL from config.ts
-vercel.json            → conditional build: only deploys when commit has [build]
+    global.css           → layout and structure styles using CSS variables
+public/                  → static assets (images, favicon)
+astro.config.mjs         → Astro config, pulls site URL from config.ts
+vercel.json              → conditional build: only deploys when commit has [build]
 ```
 
 ## Configuration
 
-All personal details live in `src/config.ts`:
-- `site.name` -displayed in the header
-- `site.title` -used in the HTML `<title>` on the homepage
-- `site.description` -meta description
-- `site.url` -canonical site URL
-- `scheme` -which color scheme to use ("warm", "cool", "mono", "forest")
-- `colorSchemes` -named color schemes with light/dark variants
+Two files to edit:
+
+**`token.json`** - design tokens (shared with Figma):
+- `typography` - fontFamily, fontSize, lineHeight, small, code
+- `spacing` - body padding, maxWidth, gaps, heading margins
+- `radii` - border radius for code and pre blocks
+- `scheme` - which color scheme to use ("warm", "cool", "mono", "forest")
+- `color` - named color schemes, each with light/dark variants
+
+**`src/config.ts`** - site identity:
+- `site.name` - displayed in the header
+- `site.title` - HTML `<title>` on the homepage
+- `site.description` - meta description
+- `site.url` - canonical site URL
+
+## How tokens flow
+
+`token.json` → `config.ts` imports it → `Base.astro` injects all values as CSS custom properties on `:root` → `global.css` uses `var(--token-name)` everywhere. No hardcoded values in CSS.
+
+Light/dark mode: colors swap automatically via `@media (prefers-color-scheme: dark)`. Typography and spacing stay the same in both modes.
 
 ## The .md URL pattern
 
@@ -51,12 +65,6 @@ Every post at `/posts/foo/` also has `/posts/foo.md` serving the raw Markdown so
 
 1. `src/integrations/copy-markdown.ts` copies source `.md` files into the build output
 2. `Base.astro` adds `<link rel="alternate" type="text/markdown" href="/posts/foo.md">` to the HTML head so crawlers can discover it
-
-## Color schemes
-
-Set `scheme` in `src/config.ts` to pick a color scheme. Light/dark mode is automatic based on the user's system setting via `prefers-color-scheme`. Colors are baked into the HTML at build time.
-
-To add a new scheme: add an entry to `colorSchemes` with `light` and `dark` objects containing: `text`, `textMuted`, `bg`, `link`, `border`, `codeBg`.
 
 ## Content collection
 
@@ -74,7 +82,7 @@ description: string # required, used in meta tag, keep under 160 chars
 
 1. Create `src/content/posts/your-post-name.md` (lowercase, hyphenated)
 2. Add the required frontmatter (title, date, description)
-3. Write body in plain Markdown -do NOT add `# Title`, the layout handles it
+3. Write body in plain Markdown - do NOT add `# Title`, the layout handles it
 4. Use `##` for section headings within the post
 5. Images go in `public/`, reference as `/image.png`
 
@@ -107,17 +115,18 @@ This is controlled by `vercel.json`'s `ignoreCommand`.
 
 1. Create an empty directory and run `pnpm init`
 2. Install Astro: `pnpm add astro`
-3. Create `src/config.ts` with site details and color schemes
-4. Set up `src/content.config.ts` with a `posts` collection using glob loader and the schema (title, date, description)
-5. Create `Base.astro` layout with theme picker and `<link rel="alternate" type="text/markdown">` support
-6. Create `global.css` with CSS variables for colors, system serif font stack
-7. Create `index.astro` that queries the posts collection and lists them by date
-8. Create `[...slug].astro` that renders individual posts and passes `mdUrl` to the layout
-9. Create `copy-markdown.ts` integration -on `astro:build:done`, copy `.md` files to output
-10. Register the integration in `astro.config.mjs`
-11. Add `vercel.json` with `ignoreCommand` that checks for `[build]` in the commit message
-12. Push to GitHub, connect to Vercel -zero config, Vercel auto-detects Astro
+3. Create `token.json` with typography, spacing, radii, scheme, and color definitions
+4. Create `src/config.ts` with site identity, importing token.json
+5. Set up `src/content.config.ts` with a `posts` collection using glob loader and the schema (title, date, description)
+6. Create `Base.astro` layout that injects all tokens as CSS custom properties and adds `<link rel="alternate" type="text/markdown">` support
+7. Create `global.css` using only CSS variables from tokens - no hardcoded values
+8. Create `index.astro` that queries the posts collection and lists them by date
+9. Create `[...slug].astro` that renders individual posts and passes `mdUrl` to the layout
+10. Create `copy-markdown.ts` integration - on `astro:build:done`, copy `.md` files to output
+11. Register the integration in `astro.config.mjs`
+12. Add `vercel.json` with `ignoreCommand` that checks for `[build]` in the commit message
+13. Push to GitHub, connect to Vercel - zero config, Vercel auto-detects Astro
 
 ## License
 
-Unlicense -public domain. No restrictions.
+Unlicense - public domain. No restrictions.

@@ -6,18 +6,13 @@
   box-sizing: border-box;
 }
 
-:root {
-  --max-width: 640px;
-}
-
 body {
-  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
-    "Times New Roman", serif;
+  font-family: var(--font-family);
   color: var(--text);
   background: var(--bg);
-  font-size: 1.5rem;
-  line-height: 1.3;
-  padding: 2rem 1.5rem;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  padding: var(--spacing-body);
   max-width: var(--max-width);
   margin: 0 auto;
 }
@@ -32,7 +27,7 @@ header nav a {
 }
 
 main {
-  margin-top: 3rem;
+  margin-top: var(--spacing-main-top);
 }
 
 /* Post list */
@@ -40,72 +35,72 @@ main {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--spacing-list-gap);
 }
 
 .post-list time {
   color: var(--text-muted);
-  font-size: 0.875rem;
+  font-size: var(--font-small);
 }
 
 /* Post content */
 article h1 {
-  font-size: 1.5rem;
+  font-size: var(--font-size);
   margin-bottom: 0.25rem;
 }
 
 article .post-date {
   color: var(--text-muted);
-  font-size: 0.875rem;
-  margin-bottom: 2rem;
+  font-size: var(--font-small);
+  margin-bottom: var(--spacing-heading-top-lg);
   display: block;
 }
 
 article h2 {
   font-size: 1.25rem;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
+  margin-top: var(--spacing-heading-top-lg);
+  margin-bottom: var(--spacing-heading-bottom);
 }
 
 article h3 {
   font-size: 1.1rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: var(--spacing-heading-top-sm);
+  margin-bottom: var(--spacing-heading-bottom);
 }
 
 article p {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-content-gap);
 }
 
 article ul,
 article ol {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-content-gap);
   padding-left: 1.5rem;
 }
 
 article blockquote {
   border-left: 3px solid var(--border);
-  padding-left: 1rem;
+  padding-left: var(--spacing-content-gap);
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-content-gap);
 }
 
 article pre {
   background: var(--code-bg);
-  padding: 1rem;
-  border-radius: 4px;
+  padding: var(--spacing-content-gap);
+  border-radius: var(--radius-pre);
   overflow-x: auto;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-content-gap);
 }
 
 article code {
-  font-size: 0.9em;
+  font-size: var(--font-code);
 }
 
 article p code {
   background: var(--code-bg);
   padding: 0.15em 0.3em;
-  border-radius: 3px;
+  border-radius: var(--radius-code);
 }
 
 article img {
