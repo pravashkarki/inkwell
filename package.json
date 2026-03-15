@@ -1,6 +1,10 @@
 {
   "name": "inkwell",
   "type": "module",
+  "author": {
+    "name": "Pravo",
+    "url": "https://www.linkedin.com/in/pravasho/"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

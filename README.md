@@ -50,6 +50,10 @@ git push
 
 Commits without `[build]` are ignored by Vercel.
 
+## Author
+
+[Pravo](https://www.linkedin.com/in/pravasho/)
+
 ## License
 
 Public domain. [Unlicense](LICENSE). Do whatever you want with it.
