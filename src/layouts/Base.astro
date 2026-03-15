@@ -1,0 +1,35 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  mdUrl?: string;
+}
+
+const { title, description, mdUrl } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {mdUrl && <link rel="alternate" type="text/markdown" href={mdUrl} />}
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Pravash Karki</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>&copy; {new Date().getFullYear()} Pravash Karki</p>
+    </footer>
+  </body>
+</html>
