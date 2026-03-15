@@ -8,10 +8,10 @@ A minimal personal site. Markdown files are the source of truth. Every page is s
 
 ## Stack
 
-- **Astro** — static site generator (markdown-first)
-- **Vercel** — hosting, auto-deploys from GitHub
-- **Plain CSS** — single stylesheet, no framework
-- **pnpm** — package manager
+- **Astro** -static site generator (markdown-first)
+- **Vercel** -hosting, auto-deploys from GitHub
+- **Plain CSS** -single stylesheet, no framework
+- **pnpm** -package manager
 
 ## Project structure
 
@@ -38,12 +38,12 @@ vercel.json            → conditional build: only deploys when commit has [buil
 ## Configuration
 
 All personal details live in `src/config.ts`:
-- `site.name` — displayed in the header
-- `site.title` — used in the HTML `<title>` on the homepage
-- `site.description` — meta description
-- `site.url` — canonical site URL
-- `colorSchemes` — named color schemes with light/dark variants
-- `defaultScheme` — which scheme loads by default
+- `site.name` -displayed in the header
+- `site.title` -used in the HTML `<title>` on the homepage
+- `site.description` -meta description
+- `site.url` -canonical site URL
+- `colorSchemes` -named color schemes with light/dark variants
+- `defaultScheme` -which scheme loads by default
 
 ## The .md URL pattern
 
@@ -74,7 +74,7 @@ description: string # required, used in meta tag, keep under 160 chars
 
 1. Create `src/content/posts/your-post-name.md` (lowercase, hyphenated)
 2. Add the required frontmatter (title, date, description)
-3. Write body in plain Markdown — do NOT add `# Title`, the layout handles it
+3. Write body in plain Markdown -do NOT add `# Title`, the layout handles it
 4. Use `##` for section headings within the post
 5. Images go in `public/`, reference as `/image.png`
 
@@ -113,11 +113,11 @@ This is controlled by `vercel.json`'s `ignoreCommand`.
 6. Create `global.css` with CSS variables for colors, system serif font stack
 7. Create `index.astro` that queries the posts collection and lists them by date
 8. Create `[...slug].astro` that renders individual posts and passes `mdUrl` to the layout
-9. Create `copy-markdown.ts` integration — on `astro:build:done`, copy `.md` files to output
+9. Create `copy-markdown.ts` integration -on `astro:build:done`, copy `.md` files to output
 10. Register the integration in `astro.config.mjs`
 11. Add `vercel.json` with `ignoreCommand` that checks for `[build]` in the commit message
-12. Push to GitHub, connect to Vercel — zero config, Vercel auto-detects Astro
+12. Push to GitHub, connect to Vercel -zero config, Vercel auto-detects Astro
 
 ## License
 
-Unlicense — public domain. No restrictions.
+Unlicense -public domain. No restrictions.

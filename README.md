@@ -2,12 +2,12 @@
 
 A minimal personal site where Markdown is the source of truth. Write, push, publish.
 
-Every page is available as clean HTML for humans and as raw Markdown for AI crawlers — append `.md` to any post URL. No CMS, no database, nothing to manage beyond the writing itself.
+Every page is available as clean HTML for humans and as raw Markdown for AI crawlers -append `.md` to any post URL. No CMS, no database, nothing to manage beyond the writing itself.
 
 ## Use this template
 
 1. Fork or clone this repo
-2. Edit `src/config.ts` — set your name, site URL, and description
+2. Edit `src/config.ts` -set your name, site URL, and description
 3. Delete the example post in `src/content/posts/` and write your own
 4. Connect to Vercel (or any static host) and deploy
 
@@ -46,4 +46,4 @@ To add a scheme, add an entry to the `colorSchemes` object with `light` and `dar
 
 ## License
 
-Public domain — [Unlicense](LICENSE). Do whatever you want with it.
+Public domain -[Unlicense](LICENSE). Do whatever you want with it.

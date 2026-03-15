@@ -15,14 +15,14 @@ description: A one-line summary of the post.
 ```
 
 4. Write the body in plain Markdown below the frontmatter
-5. Commit and push — include `[build]` in the commit message to trigger a deploy
+5. Commit and push -include `[build]` in the commit message to trigger a deploy
 
 ## Rules
 
-- `title`, `date`, and `description` are required — the build will fail without them
+- `title`, `date`, and `description` are required -the build will fail without them
 - `date` format is `YYYY-MM-DD`
-- `description` is used in the HTML meta tag — keep it under 160 characters
-- Do not add `# Title` as the first line — the layout renders the title from frontmatter
+- `description` is used in the HTML meta tag -keep it under 160 characters
+- Do not add `# Title` as the first line -the layout renders the title from frontmatter
 - Use `##` for section headings within the post
 - Images go in `public/` and are referenced as `/image.png` in Markdown
 

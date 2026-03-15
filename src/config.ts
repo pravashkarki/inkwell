@@ -7,7 +7,7 @@ export const site = {
   url: "https://pravashkarki.com",
 };
 
-// Color schemes — users can switch between these via the theme picker.
+// Color schemes - users can switch between these via the theme picker.
 // "system" follows the OS light/dark preference.
 // Add your own: just define light and dark values.
 export const colorSchemes = {
