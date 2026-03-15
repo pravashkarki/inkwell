@@ -106,4 +106,60 @@ article p code {
 article img {
   max-width: 100%;
   height: auto;
+  border-radius: var(--radius-pre);
+  margin-bottom: 0.25rem;
+}
+
+article figure {
+  margin-bottom: var(--spacing-content-gap);
+}
+
+article figure img {
+  margin-bottom: 0.5rem;
+}
+
+article figcaption {
+  color: var(--text-muted);
+  font-size: var(--font-sm);
+  font-style: italic;
+}
+
+article blockquote footer,
+article blockquote cite {
+  display: block;
+  font-size: var(--font-sm);
+  margin-top: 0.5rem;
+  font-style: normal;
+}
+
+article strong {
+  font-weight: 700;
+}
+
+article em {
+  font-style: italic;
+}
+
+article hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: var(--spacing-heading-top-lg) 0;
+}
+
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-content-gap);
+  font-size: var(--font-sm);
+}
+
+article th,
+article td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+article th {
+  font-weight: 700;
 }
