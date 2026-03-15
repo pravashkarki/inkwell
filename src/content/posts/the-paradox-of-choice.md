@@ -1,5 +1,5 @@
 ---
-title: The Paradox of Choice
+title: the paradox of choice
 date: 2025-09-30
 description: More options do not make you happier. They make you anxious.
 ---

@@ -1,5 +1,5 @@
 ---
-title: The Art of Doing Less
+title: the art of doing less
 date: 2026-01-14
 description: Productivity is not about doing more. It is about doing what matters.
 ---

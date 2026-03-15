@@ -4,10 +4,10 @@
 import tokens from "../token.json";
 
 export const site = {
-  name: "Your Name",
-  title: "Your Name",
-  description: "A personal site for writing.",
-  url: "https://example.com",
+  name: "try inkwell",
+  title: "try inkwell",
+  description: "A minimal blog template for serious writers.",
+  url: "https://try-inkwell.vercel.app",
 };
 
 export const tokens_ = tokens;

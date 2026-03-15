@@ -1,5 +1,5 @@
 ---
-title: Why You Should Read Slowly
+title: why you should read slowly
 date: 2025-12-03
 description: Speed reading misses the point. The best readers go slow on purpose.
 ---
