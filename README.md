@@ -1,12 +1,8 @@
 # pravashkarki.com
 
-Personal site built with [Astro](https://astro.build). Markdown files in, static HTML out.
+A personal site where Markdown is the source of truth. Write, push, publish.
 
-## How it works
-
-- Write posts as `.md` files in `src/content/posts/`
-- Push to GitHub — Vercel builds automatically when the commit message contains `[build]`
-- Every post is available as HTML and as raw Markdown (append `.md` to any post URL)
+Every page is available as clean HTML for humans and as raw Markdown for AI crawlers — append `.md` to any post URL. No CMS, no database, nothing to manage beyond the writing itself.
 
 ## Development
 
