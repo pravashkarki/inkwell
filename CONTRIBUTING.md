@@ -40,6 +40,5 @@ Thanks for your interest. inkwell is intentionally minimal. Contributions should
 
 ## Code style
 
-- No emdashes in content or docs
 - Start commit messages with a verb (Add, Fix, Update, Remove)
 - Keep it simple

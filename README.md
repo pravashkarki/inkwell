@@ -4,6 +4,8 @@ A minimal personal site where Markdown is the source of truth. Write, push, publ
 
 Every page is available as clean HTML for humans and as raw Markdown for AI crawlers. Append `.md` to any post URL to get the raw Markdown. No CMS, no database, nothing to manage beyond the writing itself.
 
+**Deploy your own inkwell site in one click:**
+
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpravashkarki%2Finkwell)
 
 ## Use this template
@@ -58,4 +60,4 @@ Commits without `[build]` are ignored by Vercel.
 
 ## License
 
-Public domain. [Unlicense](LICENSE). Do whatever you want with it.
+[MIT](LICENSE)

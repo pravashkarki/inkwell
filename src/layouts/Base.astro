@@ -59,13 +59,17 @@ const { title, description, mdUrl } = Astro.props;
     `} />
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <header>
-      <nav>
+      <nav aria-label="Site">
         <a href="/">{site.name}</a>
       </nav>
     </header>
-    <main>
+    <main id="main">
       <slot />
     </main>
+    <footer>
+      <p>The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.</p>
+    </footer>
   </body>
 </html>

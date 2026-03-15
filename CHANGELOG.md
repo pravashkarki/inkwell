@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.2.0 - 2026-03-15
+
+### Added
+- Skip-to-content link for keyboard navigation
+- Visible focus styles for interactive elements
+- `aria-label` on nav landmark
+- Footer with quote
+- Deploy with Vercel button context line in README
+
+### Changed
+- License from Unlicense to MIT
+- Line height from 1.3 to 1.5 (WCAG compliant)
+- Removed emdash rule from code style guidelines
+
 ## v1.1.0 - 2026-03-15
 
 ### Added
@@ -29,4 +43,4 @@ Initial release.
 - Conditional Vercel deploys via [build] in commit message
 - Theming guide (docs/THEMING.md)
 - Writing guide (docs/WRITING.md)
-- Unlicense (public domain)
+- MIT license
