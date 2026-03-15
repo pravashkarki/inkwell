@@ -4,10 +4,10 @@
 import tokens from "../token.json";
 
 export const site = {
-  name: "Pravo",
-  title: "Pravo",
-  description: "Personal site and blog",
-  url: "https://pravashkarki.com",
+  name: "Your Name",
+  title: "Your Name",
+  description: "A personal site for writing.",
+  url: "https://example.com",
 };
 
 export const tokens_ = tokens;

@@ -1,4 +1,4 @@
-# markdown-site
+# inkwell
 
 A minimal personal site where Markdown is the source of truth. Write, push, publish.
 
