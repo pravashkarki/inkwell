@@ -7,23 +7,23 @@
 }
 
 :root {
-  --text: #1a1a1a;
-  --text-muted: #666;
-  --bg: #fff;
-  --link: #1a1a1a;
-  --border: #e5e5e5;
-  --code-bg: #f5f5f5;
+  --text: #2c2c2c;
+  --text-muted: #7a7a7a;
+  --bg: #faf8f5;
+  --link: #2c2c2c;
+  --border: #e8e4df;
+  --code-bg: #f0ece7;
   --max-width: 640px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #e5e5e5;
-    --text-muted: #999;
-    --bg: #141414;
-    --link: #e5e5e5;
-    --border: #333;
-    --code-bg: #1e1e1e;
+    --text: #d4d0cb;
+    --text-muted: #8a8680;
+    --bg: #1c1b19;
+    --link: #d4d0cb;
+    --border: #33312e;
+    --code-bg: #24231f;
   }
 }
 
