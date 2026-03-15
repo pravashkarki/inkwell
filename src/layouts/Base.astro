@@ -20,15 +20,15 @@ const colors = colorSchemes[scheme];
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     {mdUrl && <link rel="alternate" type="text/markdown" href={mdUrl} />}
-    <style define:vars={{
-      text: colors.light.text,
-      "text-muted": colors.light.textMuted,
-      bg: colors.light.bg,
-      link: colors.light.link,
-      border: colors.light.border,
-      "code-bg": colors.light.codeBg,
-    }}></style>
     <style set:html={`
+      :root {
+        --text: ${colors.light.text};
+        --text-muted: ${colors.light.textMuted};
+        --bg: ${colors.light.bg};
+        --link: ${colors.light.link};
+        --border: ${colors.light.border};
+        --code-bg: ${colors.light.codeBg};
+      }
       @media (prefers-color-scheme: dark) {
         :root {
           --text: ${colors.dark.text};
