@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Inkwell
+title: getting started with inkwell
 date: 2026-03-15
 description: Set up your own blog in five minutes. No frameworks to learn, no config to wrestle.
 ---

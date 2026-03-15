@@ -1,5 +1,5 @@
 ---
-title: Markdown for Writers
+title: markdown for writers
 date: 2026-02-07
 description: A plain text format that gets out of your way. Everything you need to know in five minutes.
 ---
