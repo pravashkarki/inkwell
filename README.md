@@ -40,9 +40,7 @@ Commits without `[build]` are ignored by Vercel.
 
 ## Color schemes
 
-Users can pick a color scheme from the dropdown. Schemes are defined in `src/config.ts`. Light/dark mode follows the system setting automatically.
-
-To add a scheme, add an entry to the `colorSchemes` object with `light` and `dark` color values.
+Set `scheme` in `src/config.ts` to pick a color scheme (warm, cool, mono, forest). Light/dark mode follows the system setting automatically.
 
 ## License
 

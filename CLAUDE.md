@@ -42,8 +42,8 @@ All personal details live in `src/config.ts`:
 - `site.title` -used in the HTML `<title>` on the homepage
 - `site.description` -meta description
 - `site.url` -canonical site URL
+- `scheme` -which color scheme to use ("warm", "cool", "mono", "forest")
 - `colorSchemes` -named color schemes with light/dark variants
-- `defaultScheme` -which scheme loads by default
 
 ## The .md URL pattern
 
@@ -54,9 +54,9 @@ Every post at `/posts/foo/` also has `/posts/foo.md` serving the raw Markdown so
 
 ## Color schemes
 
-Defined in `src/config.ts` as objects with `light` and `dark` color values. The theme picker in `Base.astro` lets users switch between them. Selection is saved to `localStorage`. Light/dark mode follows the system setting via `prefers-color-scheme`.
+Set `scheme` in `src/config.ts` to pick a color scheme. Light/dark mode is automatic based on the user's system setting via `prefers-color-scheme`. Colors are baked into the HTML at build time.
 
-To add a new scheme: add an entry to `colorSchemes` with a `label`, `light`, and `dark` object containing: `text`, `textMuted`, `bg`, `link`, `border`, `codeBg`.
+To add a new scheme: add an entry to `colorSchemes` with `light` and `dark` objects containing: `text`, `textMuted`, `bg`, `link`, `border`, `codeBg`.
 
 ## Content collection
 

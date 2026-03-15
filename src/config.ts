@@ -7,12 +7,12 @@ export const site = {
   url: "https://pravashkarki.com",
 };
 
-// Color schemes - users can switch between these via the theme picker.
-// "system" follows the OS light/dark preference.
-// Add your own: just define light and dark values.
+// Pick a color scheme: "warm", "cool", "mono", or "forest".
+// Light/dark mode is automatic based on the user's system setting.
+export const scheme = "warm";
+
 export const colorSchemes = {
   warm: {
-    label: "Warm",
     light: {
       text: "#2c2c2c",
       textMuted: "#7a7a7a",
@@ -31,7 +31,6 @@ export const colorSchemes = {
     },
   },
   cool: {
-    label: "Cool",
     light: {
       text: "#2a2d32",
       textMuted: "#6b7280",
@@ -50,7 +49,6 @@ export const colorSchemes = {
     },
   },
   mono: {
-    label: "Mono",
     light: {
       text: "#222",
       textMuted: "#777",
@@ -69,7 +67,6 @@ export const colorSchemes = {
     },
   },
   forest: {
-    label: "Forest",
     light: {
       text: "#2d3328",
       textMuted: "#6b7a62",
@@ -88,5 +85,3 @@ export const colorSchemes = {
     },
   },
 };
-
-export const defaultScheme: keyof typeof colorSchemes = "warm";

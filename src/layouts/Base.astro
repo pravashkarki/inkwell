@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { site, colorSchemes, defaultScheme } from "../config";
+import { site, scheme, colorSchemes } from "../config";
 
 interface Props {
   title: string;
@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title, description, mdUrl } = Astro.props;
+const colors = colorSchemes[scheme];
 ---
 
 <!doctype html>
@@ -19,53 +20,35 @@ const { title, description, mdUrl } = Astro.props;
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     {mdUrl && <link rel="alternate" type="text/markdown" href={mdUrl} />}
+    <style define:vars={{
+      text: colors.light.text,
+      "text-muted": colors.light.textMuted,
+      bg: colors.light.bg,
+      link: colors.light.link,
+      border: colors.light.border,
+      "code-bg": colors.light.codeBg,
+    }}></style>
+    <style set:html={`
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text: ${colors.dark.text};
+          --text-muted: ${colors.dark.textMuted};
+          --bg: ${colors.dark.bg};
+          --link: ${colors.dark.link};
+          --border: ${colors.dark.border};
+          --code-bg: ${colors.dark.codeBg};
+        }
+      }
+    `} />
   </head>
   <body>
     <header>
       <nav>
         <a href="/">{site.name}</a>
-        <theme-picker>
-          <select aria-label="Color scheme">
-            {Object.entries(colorSchemes).map(([key, scheme]) => (
-              <option value={key}>{scheme.label}</option>
-            ))}
-          </select>
-        </theme-picker>
       </nav>
     </header>
     <main>
       <slot />
     </main>
-    <script define:vars={{ colorSchemes, defaultScheme }}>
-      const picker = document.querySelector("theme-picker select");
-      const saved = localStorage.getItem("color-scheme") || defaultScheme;
-
-      function applyScheme(name) {
-        const scheme = colorSchemes[name];
-        if (!scheme) return;
-        const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const colors = isDark ? scheme.dark : scheme.light;
-        const root = document.documentElement;
-        root.style.setProperty("--text", colors.text);
-        root.style.setProperty("--text-muted", colors.textMuted);
-        root.style.setProperty("--bg", colors.bg);
-        root.style.setProperty("--link", colors.link);
-        root.style.setProperty("--border", colors.border);
-        root.style.setProperty("--code-bg", colors.codeBg);
-      }
-
-      picker.value = saved;
-      applyScheme(saved);
-
-      picker.addEventListener("change", (e) => {
-        const name = e.target.value;
-        localStorage.setItem("color-scheme", name);
-        applyScheme(name);
-      });
-
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-        applyScheme(picker.value);
-      });
-    </script>
   </body>
 </html>
