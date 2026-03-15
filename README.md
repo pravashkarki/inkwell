@@ -9,7 +9,7 @@ Every page is available as clean HTML for humans and as raw Markdown for AI craw
 1. Fork or clone this repo
 2. Edit `token.json` for design (colors, typography, spacing)
 3. Edit `src/config.ts` for site identity (name, URL, description)
-4. Delete the demo posts and images: `rm -rf src/content/posts/* public/images/*`
+4. Delete the demo posts in `src/content/posts/` and demo images in `public/images/`, then add your own
 5. Connect to Vercel (or any static host) and deploy
 
 ## Docs
