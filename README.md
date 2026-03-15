@@ -71,7 +71,7 @@ Commits without `[build]` are ignored by Vercel.
 
 ## Roadmap
 
-- [ ] User-selectable color themes (pick scheme from the site, not just config)
+- [ ] Step-by-step color theme setup guide in docs
 - [ ] Typography scale (sm, md, lg, xl) defined in token.json so all sizes update from one place
 
 ## License
