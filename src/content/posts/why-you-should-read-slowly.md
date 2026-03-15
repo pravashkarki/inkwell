@@ -1,29 +1,50 @@
 ---
 title: Why You Should Read Slowly
-date: 2026-03-08
+date: 2025-12-03
 description: Speed reading misses the point. The best readers go slow on purpose.
 ---
 
-There is a whole industry built around reading faster. Apps that flash words at you. Courses that promise 1000 words per minute. The assumption is that more books equals more knowledge.
+<figure>
+  <img src="/images/books.jpg" alt="A stack of well-worn books" />
+  <figcaption>Photo by Susan Q Yin on Unsplash</figcaption>
+</figure>
 
-That assumption is wrong.
+There is a whole industry built around reading faster. Apps that flash words at you. Courses that promise *1000 words per minute*. The assumption is that more books equals more knowledge.
+
+That assumption is **wrong**.
 
 ## Reading is not consuming
 
 A book is not content to be consumed. It is a conversation with someone who spent years thinking about a problem. You would not speed through a conversation with a mentor. Why speed through their book?
 
+> In the case of good books, the point is not to see how many of them you can get through, but rather how many can get through to you.
+>
+> <cite>Mortimer J. Adler</cite>
+
 ## The forgetting problem
 
-People who read 50 books a year often cannot tell you what they learned from most of them. People who read 10 books a year and take notes can tell you exactly what changed their thinking.
+People who read 50 books a year often cannot tell you what they learned from most of them. People who read 10 books a year and take notes can tell you *exactly* what changed their thinking.
 
-The goal is not to finish books. The goal is to be changed by them.
+The goal is not to finish books. The goal is to be **changed** by them.
 
 ## How to read slowly
 
-- Read with a pen. Underline. Write in the margins.
-- Stop after each chapter and ask: what did I just learn?
-- If a sentence makes you think, put the book down and think. That is not a distraction. That is the whole point.
-- Reread the best books. You are a different person each time you return.
+- Read with a pen. Underline. Write in the margins
+- Stop after each chapter and ask: *what did I just learn?*
+- If a sentence makes you think, put the book down and think. That is not a distraction. That is the whole point
+- Reread the best books. You are a different person each time you return
+
+### The 3-2-1 method
+
+For every book you finish:
+
+1. Write down **3 key ideas**
+2. Note **2 things** you want to apply
+3. Summarize the book in **1 sentence**
+
+This takes ten minutes and is worth more than reading two extra books.
+
+---
 
 ## One book, deeply
 
