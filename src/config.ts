@@ -4,8 +4,8 @@
 import tokens from "../token.json";
 
 export const site = {
-  name: "try inkwell",
-  title: "try inkwell",
+  name: "inkwell",
+  title: "inkwell",
   description: "A minimal blog template for serious writers.",
   url: "https://try-inkwell.vercel.app",
 };

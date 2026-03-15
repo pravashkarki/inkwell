@@ -27,7 +27,7 @@ const { title, description, mdUrl } = Astro.props;
         --link: ${colors.light.link};
         --border: ${colors.light.border};
         --code-bg: ${colors.light.codeBg};
-        --font-family: ${t.typography.fontFamily};
+        --font-family: ${t.typography.fontFamily[t.typography.fontStack as keyof typeof t.typography.fontFamily]};
         --font-sm: ${t.typography.scale.sm};
         --font-md: ${t.typography.scale.md};
         --font-lg: ${t.typography.scale.lg};

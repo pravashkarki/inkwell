@@ -51,7 +51,7 @@ Two files to edit:
 
 **`token.json`** - design tokens (shared with Figma):
 - `typography.scale` - sm, md, lg, xl sizes. `typography.body` picks which scale to use
-- `typography.fontFamily` - system serif stack
+- `typography.fontFamily` - serif and sans font stacks. `typography.fontStack` picks which one to use
 - `spacing` - body padding, maxWidth, gaps, heading margins
 - `radii` - border radius for code and pre blocks
 - `scheme` - which color scheme to use ("warm", "cool", "mono", "forest")
