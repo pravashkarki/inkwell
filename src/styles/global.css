@@ -12,15 +12,28 @@
   --bg: #fff;
   --link: #1a1a1a;
   --border: #e5e5e5;
+  --code-bg: #f5f5f5;
   --max-width: 640px;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e5e5e5;
+    --text-muted: #999;
+    --bg: #141414;
+    --link: #e5e5e5;
+    --border: #333;
+    --code-bg: #1e1e1e;
+  }
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+    "Times New Roman", serif;
   color: var(--text);
   background: var(--bg);
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.7;
   padding: 2rem 1.5rem;
   max-width: var(--max-width);
   margin: 0 auto;
@@ -95,7 +108,7 @@ article blockquote {
 }
 
 article pre {
-  background: #f5f5f5;
+  background: var(--code-bg);
   padding: 1rem;
   border-radius: 4px;
   overflow-x: auto;
@@ -107,7 +120,7 @@ article code {
 }
 
 article p code {
-  background: #f5f5f5;
+  background: var(--code-bg);
   padding: 0.15em 0.3em;
   border-radius: 3px;
 }
