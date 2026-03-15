@@ -1,13 +1,14 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
+import { site } from "../config";
 
 const posts = (await getCollection("posts")).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 ---
 
-<Base title="Pravash Karki" description="Personal site and blog">
+<Base title={site.title} description={site.description}>
   <ul class="post-list">
     {
       posts.map((post) => (
