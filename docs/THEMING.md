@@ -65,6 +65,20 @@ To make a new scheme: pick a hue, keep the same lightness and chroma pattern as 
 - `textMuted` sits between `text` and `bg` in lightness
 - Test both light and dark mode. Toggle your system setting to check
 
+## Font stack
+
+Two built-in font stacks in `token.json`:
+
+```json
+"fontFamily": {
+  "serif": "\"Iowan Old Style\", \"Palatino Linotype\", Palatino, Georgia, serif",
+  "sans": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif"
+},
+"fontStack": "serif"
+```
+
+Set `"fontStack"` to `"serif"` or `"sans"`. You can also add your own stack to the `fontFamily` object and reference it by key.
+
 ## Typography scale
 
 Four sizes defined in `token.json`:
@@ -87,7 +101,7 @@ Where they're used:
 To change the body text size, set `"body"` to any scale key:
 
 ```json
-"body": "md"
+"body": "lg"
 ```
 
 To scale everything up or down, adjust all four values together. Keep the ratios similar.

@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.1.0 - 2026-03-15
+
+### Added
+- Serif/sans-serif font stack choice via `fontStack` in token.json
+- Italic styling for blockquotes
+
+### Changed
+- Body text size back to lg scale
+- Site name to "inkwell"
+
+### Fixed
+- THEMING.md body size example now matches default
+
 ## v1.0.0 - 2026-03-15
 
 Initial release.
