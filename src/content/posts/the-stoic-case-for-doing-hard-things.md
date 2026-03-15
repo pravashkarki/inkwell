@@ -6,7 +6,7 @@ description: Comfort is the enemy of growth. The Stoics understood this 2000 yea
 
 <figure>
   <img src="/images/mountain.jpg" alt="A rugged mountain peak under clear sky" />
-  <figcaption>Photo by Kalen Emsley on Unsplash</figcaption>
+  <figcaption>Photo by <a href="https://unsplash.com/@kalenemsley" target="_blank" rel="noopener noreferrer">Kalen Emsley</a> on <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption>
 </figure>
 
 Marcus Aurelius ruled the Roman Empire. He could have lived in pure comfort. Instead, he slept on a hard bed, ate simple food, and wrote in his journal every morning about how to be a better person.

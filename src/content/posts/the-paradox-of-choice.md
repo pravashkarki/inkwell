@@ -6,7 +6,7 @@ description: More options do not make you happier. They make you anxious.
 
 <figure>
   <img src="/images/choices.jpg" alt="A forking path through a misty forest" />
-  <figcaption>Photo by Jens Lelie on Unsplash</figcaption>
+  <figcaption>Photo by <a href="https://unsplash.com/@madebyjens" target="_blank" rel="noopener noreferrer">Jens Lelie</a> on <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption>
 </figure>
 
 A grocery store in California ran an experiment. One day they offered **24 types of jam** for tasting. Another day, just **6**. The table with 24 jams attracted more people. But the table with 6 jams sold *ten times more*.

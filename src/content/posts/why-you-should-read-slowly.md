@@ -6,7 +6,7 @@ description: Speed reading misses the point. The best readers go slow on purpose
 
 <figure>
   <img src="/images/books.jpg" alt="A stack of well-worn books" />
-  <figcaption>Photo by Susan Q Yin on Unsplash</figcaption>
+  <figcaption>Photo by <a href="https://unsplash.com/@syinq" target="_blank" rel="noopener noreferrer">Susan Q Yin</a> on <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption>
 </figure>
 
 There is a whole industry built around reading faster. Apps that flash words at you. Courses that promise *1000 words per minute*. The assumption is that more books equals more knowledge.

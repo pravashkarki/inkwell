@@ -6,7 +6,7 @@ description: Productivity is not about doing more. It is about doing what matter
 
 <figure>
   <img src="/images/desk.jpg" alt="A minimal desk with a notebook and pen" />
-  <figcaption>Photo by Nick Morrison on Unsplash</figcaption>
+  <figcaption>Photo by <a href="https://unsplash.com/@nickmorrison" target="_blank" rel="noopener noreferrer">Nick Morrison</a> on <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption>
 </figure>
 
 Most productivity advice is about *adding*. More tools, more systems, more habits. But the people who get the most done have a different approach. They **remove**.
