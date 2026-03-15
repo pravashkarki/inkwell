@@ -135,7 +135,7 @@ For images with captions, use HTML `<figure>`:
 ```html
 <figure>
   <img src="/images/photo.jpg" alt="Description" />
-  <figcaption>Photo by Author on Unsplash</figcaption>
+  <figcaption>Photo by <a href="https://unsplash.com/@author" target="_blank" rel="noopener noreferrer">Author</a> on <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption>
 </figure>
 ```
 

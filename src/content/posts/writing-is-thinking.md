@@ -6,7 +6,7 @@ description: You do not write because you have ideas. You write to find out what
 
 <figure>
   <img src="/images/journal.jpg" alt="A hand writing in a journal with a fountain pen" />
-  <figcaption>Photo by Aaron Burden on Unsplash</figcaption>
+  <figcaption>Photo by <a href="https://unsplash.com/@aaronburden" target="_blank" rel="noopener noreferrer">Aaron Burden</a> on <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption>
 </figure>
 
 Most people think writing starts *after* thinking. You sit down, you know what you want to say, you write it. But that is not how it works.

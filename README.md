@@ -1,12 +1,14 @@
 # inkwell
 
-A minimal personal site where Markdown is the source of truth. Write, push, publish.
+A minimal blog template where Markdown is the source of truth. Write, push, publish.
 
 Every page is available as clean HTML for humans and as raw Markdown for AI crawlers. Append `.md` to any post URL to get the raw Markdown. No CMS, no database, nothing to manage beyond the writing itself.
 
 **Deploy your own inkwell site in one click:**
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpravashkarki%2Finkwell)
+
+**Note:** Demo posts are AI-generated for layout demonstration only. They are not practical advice of any kind.
 
 ## Use this template
 
