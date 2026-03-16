@@ -26,6 +26,7 @@ CHANGELOG.md             - release history
 docs/
   WRITING.md             - how to write posts
   THEMING.md             - color schemes, typography, Figma sync guide
+  UPDATING.md            - how to pull template updates
 src/
   config.ts              - site identity (name, URL) + reads token.json
   content/
