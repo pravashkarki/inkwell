@@ -22,6 +22,7 @@ Every page is available as clean HTML for humans and as raw Markdown for AI craw
 
 - [Writing a post](docs/WRITING.md) - how to create posts, frontmatter rules, examples
 - [Theming](docs/THEMING.md) - color schemes, OKLCH guide, typography scale, spacing, Figma sync
+- [Updating](docs/UPDATING.md) - how to pull template updates without losing your customizations
 
 ## Design tokens
 
