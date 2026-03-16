@@ -104,6 +104,12 @@ To change the body text size, set `"body"` to any scale key:
 "body": "lg"
 ```
 
+Code blocks use the same scale system. Set `"code"` to any scale key:
+
+```json
+"code": "sm"
+```
+
 To scale everything up or down, adjust all four values together. Keep the ratios similar.
 
 ## Spacing

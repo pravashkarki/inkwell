@@ -34,7 +34,7 @@ const { title, description, mdUrl } = Astro.props;
         --font-xl: ${t.typography.scale.xl};
         --font-body: var(--font-${t.typography.body});
         --line-height: ${t.typography.lineHeight};
-        --font-code: ${t.typography.code};
+        --font-code: var(--font-${t.typography.code});
         --spacing-body: ${t.spacing.body};
         --max-width: ${t.spacing.maxWidth};
         --spacing-main-top: ${t.spacing.mainTop};
