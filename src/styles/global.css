@@ -122,6 +122,32 @@ article pre {
   border-radius: var(--radius-pre);
   overflow-x: auto;
   margin-bottom: var(--spacing-content-gap);
+  position: relative;
+}
+
+article pre .copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-code);
+  color: var(--text-muted);
+  font-size: var(--font-sm);
+  cursor: pointer;
+  padding: 0.15rem 0.4rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+article pre:hover .copy-btn {
+  opacity: 1;
+}
+
+article pre .copy-btn:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
 }
 
 article code {

@@ -38,6 +38,7 @@ src/
       [...slug].astro    - renders individual post pages
   integrations/
     copy-markdown.ts     - build plugin that copies raw .md files to output
+    watch-tokens.ts      - dev plugin that hot-reloads on token.json changes
   styles/
     global.css           - layout and structure styles using CSS variables only
 public/                  - static assets (images, favicon)
@@ -121,7 +122,7 @@ Semver: vMAJOR.MINOR.PATCH
 
 ```
 pnpm install    # install dependencies
-pnpm dev        # local dev server
+pnpm dev        # local dev server (watches src/ and token.json)
 pnpm build      # production build to dist/
 pnpm preview    # preview the production build
 ```

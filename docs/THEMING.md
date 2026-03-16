@@ -104,6 +104,12 @@ To change the body text size, set `"body"` to any scale key:
 "body": "lg"
 ```
 
+Code blocks use the same scale system. Set `"code"` to any scale key:
+
+```json
+"code": "sm"
+```
+
 To scale everything up or down, adjust all four values together. Keep the ratios similar.
 
 ## Spacing
@@ -125,6 +131,10 @@ To scale everything up or down, adjust all four values together. Keep the ratios
 - `body` is the page padding (top/bottom left/right)
 - The rest control vertical rhythm between elements
 
+## Live preview
+
+The dev server (`pnpm dev`) watches `token.json` in addition to all files under `src/`. Edit any token value and the browser reloads automatically. No restart needed.
+
 ## Syncing with Figma
 
-`token.json` is structured to work with Figma token plugins like Tokens Studio. Export from Figma, replace `token.json`, rebuild. The site picks up all changes automatically.
+`token.json` is structured to work with Figma token plugins like Tokens Studio. Export from Figma, replace `token.json`, and the dev server picks up all changes automatically.

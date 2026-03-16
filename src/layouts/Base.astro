@@ -34,7 +34,7 @@ const { title, description, mdUrl } = Astro.props;
         --font-xl: ${t.typography.scale.xl};
         --font-body: var(--font-${t.typography.body});
         --line-height: ${t.typography.lineHeight};
-        --font-code: ${t.typography.code};
+        --font-code: var(--font-${t.typography.code});
         --spacing-body: ${t.spacing.body};
         --max-width: ${t.spacing.maxWidth};
         --spacing-main-top: ${t.spacing.mainTop};
@@ -71,5 +71,21 @@ const { title, description, mdUrl } = Astro.props;
     <footer>
       <p>The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.</p>
     </footer>
+    <script>
+      document.querySelectorAll('article pre').forEach((pre) => {
+        const btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.textContent = 'copy';
+        btn.setAttribute('aria-label', 'Copy code to clipboard');
+        btn.addEventListener('click', () => {
+          const code = pre.querySelector('code');
+          navigator.clipboard.writeText((code || pre).textContent || '').then(() => {
+            btn.textContent = 'copied';
+            setTimeout(() => btn.textContent = 'copy', 1500);
+          });
+        });
+        pre.appendChild(btn);
+      });
+    </script>
   </body>
 </html>
