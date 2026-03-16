@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.3.0 - 2026-03-16
+
+### Added
+- Copy-to-clipboard button on code blocks (appears on hover)
+- Hot-reload for token.json in dev server via watch-tokens integration
+
+### Fixed
+- Code font size now uses typography scale instead of relative em
+
 ## v1.2.0 - 2026-03-15
 
 ### Added
