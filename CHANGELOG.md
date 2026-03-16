@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.3.1 - 2026-03-16
+
+### Added
+- Updating guide (docs/UPDATING.md) for pulling template updates
+
 ## v1.3.0 - 2026-03-16
 
 ### Added
