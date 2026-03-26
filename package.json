@@ -8,11 +8,20 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "ik:new": "node scripts/new-post.js"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.1",
-    "astro": "^5.7.0"
+    "astro": "^5.7.0",
+    "satori": "^0.26.0",
+    "sharp": "^0.34.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild"
+    ]
   }
 }

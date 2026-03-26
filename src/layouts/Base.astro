@@ -8,11 +8,13 @@ interface Props {
   mdUrl?: string;
   image?: string;
   canonicalUrl?: string;
+  slug?: string;
 }
 
-const { title, description, mdUrl, image, canonicalUrl } = Astro.props;
+const { title, description, mdUrl, image, canonicalUrl, slug } = Astro.props;
 const pageUrl = canonicalUrl || new URL(Astro.url.pathname, site.url).href;
-const ogImage = image ? new URL(image, site.url).href : undefined;
+const autoOgImage = slug ? new URL(`/og/${slug}.png`, site.url).href : undefined;
+const ogImage = image ? new URL(image, site.url).href : autoOgImage;
 ---
 
 <!doctype html>
