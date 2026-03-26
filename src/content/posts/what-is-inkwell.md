@@ -2,6 +2,7 @@
 title: what is inkwell
 date: 2026-03-16
 description: A minimal blog template for serious writers. Here is what you get.
+tags: [inkwell]
 ---
 
 Inkwell is a blog template. You write in Markdown, push to GitHub, and your site publishes itself. No CMS, no database, no complexity.

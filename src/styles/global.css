@@ -95,6 +95,50 @@ footer {
   font-size: var(--font-sm);
 }
 
+/* Tags */
+.tag {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.tag:hover {
+  color: var(--text);
+}
+
+.post-tags {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.post-tags .tag::before {
+  content: "#";
+}
+
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: var(--spacing-content-gap);
+}
+
+.tag-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.tag-count {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+}
+
+.back-link {
+  margin-top: var(--spacing-heading-top-lg);
+  font-size: var(--font-sm);
+}
+
 /* Post content */
 article h1 {
   font-size: var(--font-xl);

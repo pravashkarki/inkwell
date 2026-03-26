@@ -3,7 +3,9 @@ import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
 import { site } from "../config";
 
-const posts = (await getCollection("posts")).sort(
+const posts = (await getCollection("posts", ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+})).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 ---
@@ -22,6 +24,13 @@ const posts = (await getCollection("posts")).sort(
               day: "numeric",
             })}
           </time>
+          {post.data.tags.length > 0 && (
+            <span class="post-tags">
+              {post.data.tags.map((tag: string) => (
+                <a href={`/tags/${tag}/`} class="tag">{tag}</a>
+              ))}
+            </span>
+          )}
         </li>
       ))
     }

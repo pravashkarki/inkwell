@@ -2,6 +2,7 @@
 title: the stoic case for doing hard things
 date: 2025-11-18
 description: Comfort is the enemy of growth. The Stoics understood this 2000 years ago.
+tags: [philosophy, thinking]
 ---
 
 <figure>
