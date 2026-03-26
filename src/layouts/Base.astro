@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { site, colors, tokens_ as t } from "../config";
+import { site, nav, colors, tokens_ as t } from "../config";
 
 interface Props {
   title: string;
@@ -63,6 +63,20 @@ const { title, description, mdUrl } = Astro.props;
     <header>
       <nav aria-label="Site">
         <a href="/">{site.name}</a>
+        {nav.length > 0 && (
+          <ul class="nav-links">
+            {nav.map((link: { label: string; href: string; external?: boolean }) => (
+              <li>
+                <a
+                  href={link.href}
+                  {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
       </nav>
     </header>
     <main id="main">

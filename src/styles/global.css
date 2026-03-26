@@ -42,9 +42,31 @@ input:focus-visible {
   outline-offset: 2px;
 }
 
-header nav a {
+header nav {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+header nav > a {
   text-decoration: none;
   font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  font-size: var(--font-sm);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+}
+
+.nav-links a:hover {
+  color: var(--text);
 }
 
 main {
