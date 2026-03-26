@@ -145,11 +145,16 @@ article h1 {
   margin-bottom: 0.25rem;
 }
 
-article .post-date {
+article .post-meta {
   color: var(--text-muted);
   font-size: var(--font-sm);
   margin-bottom: var(--spacing-heading-top-lg);
-  display: block;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.reading-time {
+  color: var(--text-muted);
 }
 
 article h2 {
@@ -285,4 +290,38 @@ article td {
 
 article th {
   font-weight: 700;
+}
+
+/* Post navigation */
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: var(--spacing-heading-top-lg);
+  padding-top: var(--spacing-content-gap);
+  border-top: 1px solid var(--border);
+}
+
+.post-nav-link {
+  text-decoration: none;
+  max-width: 50%;
+}
+
+.post-nav-next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.post-nav-label {
+  display: block;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+}
+
+.post-nav-title {
+  color: var(--link);
+}
+
+.post-nav-link:hover .post-nav-title {
+  text-decoration: underline;
 }
