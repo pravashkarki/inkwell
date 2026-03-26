@@ -42,9 +42,31 @@ input:focus-visible {
   outline-offset: 2px;
 }
 
-header nav a {
+header nav {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+header nav > a {
   text-decoration: none;
   font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  font-size: var(--font-sm);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+}
+
+.nav-links a:hover {
+  color: var(--text);
 }
 
 main {
@@ -73,17 +95,82 @@ footer {
   font-size: var(--font-sm);
 }
 
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: var(--spacing-heading-top-lg);
+  padding-top: var(--spacing-content-gap);
+  border-top: 1px solid var(--border);
+  font-size: var(--font-sm);
+}
+
+.page-info {
+  color: var(--text-muted);
+}
+
+/* Tags */
+.tag {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.tag:hover {
+  color: var(--text);
+}
+
+.post-tags {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.post-tags .tag::before {
+  content: "#";
+}
+
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: var(--spacing-content-gap);
+}
+
+.tag-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.tag-count {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+}
+
+.back-link {
+  margin-top: var(--spacing-heading-top-lg);
+  font-size: var(--font-sm);
+}
+
 /* Post content */
 article h1 {
   font-size: var(--font-xl);
   margin-bottom: 0.25rem;
 }
 
-article .post-date {
+article .post-meta {
   color: var(--text-muted);
   font-size: var(--font-sm);
   margin-bottom: var(--spacing-heading-top-lg);
-  display: block;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.reading-time {
+  color: var(--text-muted);
 }
 
 article h2 {
@@ -219,4 +306,38 @@ article td {
 
 article th {
   font-weight: 700;
+}
+
+/* Post navigation */
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: var(--spacing-heading-top-lg);
+  padding-top: var(--spacing-content-gap);
+  border-top: 1px solid var(--border);
+}
+
+.post-nav-link {
+  text-decoration: none;
+  max-width: 50%;
+}
+
+.post-nav-next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.post-nav-label {
+  display: block;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+}
+
+.post-nav-title {
+  color: var(--link);
+}
+
+.post-nav-link:hover .post-nav-title {
+  text-decoration: underline;
 }

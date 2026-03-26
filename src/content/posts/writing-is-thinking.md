@@ -2,6 +2,7 @@
 title: writing is thinking
 date: 2025-10-22
 description: You do not write because you have ideas. You write to find out what your ideas are.
+tags: [writing, thinking]
 ---
 
 <figure>

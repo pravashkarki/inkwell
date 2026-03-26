@@ -2,6 +2,7 @@
 title: getting started with inkwell
 date: 2026-03-15
 description: Set up your own blog in five minutes. No frameworks to learn, no config to wrestle.
+tags: [inkwell]
 ---
 
 Inkwell is a blog template for people who want to write, not manage infrastructure. Here is how to get it running.

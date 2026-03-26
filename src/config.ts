@@ -10,6 +10,12 @@ export const site = {
   url: "https://try-inkwell.vercel.app",
 };
 
+export const nav = [
+  // Add links to show in the header navigation.
+  // { label: "About", href: "/about" },
+  // { label: "Twitter", href: "https://twitter.com/you", external: true },
+];
+
 export const tokens_ = tokens;
 export const scheme = tokens.scheme as keyof typeof tokens.color;
 export const colors = tokens.color[scheme];

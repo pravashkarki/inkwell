@@ -2,6 +2,7 @@
 title: markdown for writers
 date: 2026-02-07
 description: A plain text format that gets out of your way. Everything you need to know in five minutes.
+tags: [writing, inkwell]
 ---
 
 Markdown is how you write for the web without touching HTML. It is plain text with a few simple rules. You already know most of them.
