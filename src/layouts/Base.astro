@@ -33,6 +33,7 @@ const ogImage = image ? new URL(image, site.url).href : undefined;
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
     {ogImage && <meta name="twitter:image" content={ogImage} />}
+    <link rel="alternate" type="application/rss+xml" title={site.name} href="/rss.xml" />
     {mdUrl && <link rel="alternate" type="text/markdown" href={mdUrl} />}
     <style set:html={`
       :root {
