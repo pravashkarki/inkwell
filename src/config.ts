@@ -11,8 +11,7 @@ export const site = {
 };
 
 export const nav = [
-  // Add links to show in the header navigation.
-  // { label: "About", href: "/about" },
+  { label: "About", href: "/about" },
   // { label: "Twitter", href: "https://twitter.com/you", external: true },
 ];
 
