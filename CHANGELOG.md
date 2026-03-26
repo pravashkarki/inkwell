@@ -1,5 +1,31 @@
 # Changelog
 
+## v2.0.0 - 2026-03-26
+
+### Added
+- Tags support with optional `tags` array in frontmatter
+- Tag listing page at `/tags/` and individual tag pages at `/tags/[tag]/`
+- Draft support with `draft: true` in frontmatter (hidden in production, visible in dev)
+- Pagination on homepage (10 posts per page)
+- Previous/next post navigation at bottom of each post
+- Reading time estimate on every post
+- 404 page
+- Configurable header navigation via `nav` array in `src/config.ts`
+- Open Graph meta tags (og:title, og:description, og:url, og:site_name, og:type, og:image)
+- Twitter card meta tags (twitter:card, twitter:title, twitter:description, twitter:image)
+- Canonical URL on every page
+- Optional `image` and `canonicalUrl` fields in frontmatter
+- Sitemap via @astrojs/sitemap
+- RSS feed at `/rss.xml` via @astrojs/rss with auto-discovery link
+- `robots.txt` endpoint pointing to sitemap
+- `llms.txt` endpoint for AI discoverability
+- `posts.json` API endpoint with structured post metadata
+
+### Changed
+- Homepage uses Astro pagination (moved from `index.astro` to `[...page].astro`)
+- Content schema expanded: tags, draft, image, canonicalUrl (all optional)
+- Post date display now includes reading time inline
+
 ## v1.3.1 - 2026-03-16
 
 ### Added
