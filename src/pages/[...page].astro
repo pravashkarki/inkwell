@@ -1,19 +1,26 @@
 ---
+import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
 import { site } from "../config";
 
-const posts = (await getCollection("posts", ({ data }) => {
-  return import.meta.env.PROD ? data.draft !== true : true;
-})).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime()
-);
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = (await getCollection("posts", ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  })).sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime()
+  );
+
+  return paginate(posts, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
 ---
 
 <Base title={site.title} description={site.description}>
   <ul class="post-list">
     {
-      posts.map((post) => (
+      page.data.map((post: any) => (
         <li>
           <a href={`/posts/${post.id}/`}>{post.data.title}</a>
           <br />
@@ -35,4 +42,11 @@ const posts = (await getCollection("posts", ({ data }) => {
       ))
     }
   </ul>
+  {page.lastPage > 1 && (
+    <nav class="pagination" aria-label="Page navigation">
+      {page.url.prev && <a href={page.url.prev}>Previous</a>}
+      <span class="page-info">Page {page.currentPage} of {page.lastPage}</span>
+      {page.url.next && <a href={page.url.next}>Next</a>}
+    </nav>
+  )}
 </Base>
