@@ -1,8 +1,8 @@
 import { createInterface } from "node:readline/promises";
-import { writeFile, access } from "node:fs/promises";
+import { writeFile, access, mkdir } from "node:fs/promises";
 import { join } from "node:path";
 
-const args = process.argv.slice(2);
+const args = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 
 let title, description, tags;
 
@@ -50,17 +50,32 @@ description: ${description}${tagsLine}
 
 `;
 
+const useFolder = process.argv.includes("--folder");
 const postsDir = join(process.cwd(), "src/content/posts");
-const filePath = join(postsDir, `${slug}.md`);
+
+let filePath, displayPath;
+
+if (useFolder) {
+  const folderPath = join(postsDir, slug);
+  filePath = join(folderPath, "index.md");
+  displayPath = `src/content/posts/${slug}/index.md`;
+  await mkdir(folderPath, { recursive: true });
+} else {
+  filePath = join(postsDir, `${slug}.md`);
+  displayPath = `src/content/posts/${slug}.md`;
+}
 
 try {
   await access(filePath);
-  console.log(`\nFile already exists: src/content/posts/${slug}.md`);
+  console.log(`\nFile already exists: ${displayPath}`);
   process.exit(1);
 } catch {
   // File doesn't exist, good to go
 }
 
 await writeFile(filePath, content);
-console.log(`\nCreated: src/content/posts/${slug}.md`);
+console.log(`\nCreated: ${displayPath}`);
+if (useFolder) {
+  console.log("Drop images in the same folder and reference them with ![alt](./image.jpg)");
+}
 console.log("Open the file and start writing below the frontmatter.");
