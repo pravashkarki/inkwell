@@ -6,9 +6,13 @@ interface Props {
   title: string;
   description?: string;
   mdUrl?: string;
+  image?: string;
+  canonicalUrl?: string;
 }
 
-const { title, description, mdUrl } = Astro.props;
+const { title, description, mdUrl, image, canonicalUrl } = Astro.props;
+const pageUrl = canonicalUrl || new URL(Astro.url.pathname, site.url).href;
+const ogImage = image ? new URL(image, site.url).href : undefined;
 ---
 
 <!doctype html>
@@ -18,6 +22,17 @@ const { title, description, mdUrl } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={pageUrl} />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:type" content={mdUrl ? "article" : "website"} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="twitter:card" content={ogImage ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
     {mdUrl && <link rel="alternate" type="text/markdown" href={mdUrl} />}
     <style set:html={`
       :root {
