@@ -1,5 +1,21 @@
 # Changelog
 
+## v2.1.0 - 2026-03-26
+
+### Added
+- `pnpm ik:new` interactive post scaffolder (also accepts args for non-interactive use)
+- `--folder` flag for ik:new to create folder-based posts with colocated images
+- Folder-per-post support: `posts/my-post/index.md` with images alongside
+- Auto-generated OG images (1200x630 PNG) for every post using Satori + Sharp
+- Posts without a custom image automatically get a generated social preview
+- copy-markdown integration now copies images alongside markdown files
+
+### Changed
+- Twitter card type upgrades to `summary_large_image` when OG image is available
+
+### Dependencies
+- Added `satori` and `sharp` for OG image generation
+
 ## v2.0.0 - 2026-03-26
 
 ### Added
