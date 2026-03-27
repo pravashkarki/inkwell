@@ -1,5 +1,22 @@
 # Changelog
 
+## v2.2.0 - 2026-03-27
+
+### Changed
+- Body text size from 24px to 18px for comfortable reading
+- Line height from 1.5 to 1.6 for better readability at smaller body size
+- h3 scale from 18px to 20px so all heading levels are visually distinct
+- Content gap from 1rem to 1.25rem for more breathing room between paragraphs
+- Token keys `body`/`code` replaced with direct `bodySize`/`codeSize` values in token.json (simpler for non-technical users)
+- Heading line-height set to 1.3 (tighter than body for visual contrast)
+
+### Added
+- List item spacing (0.25em between consecutive items)
+- Letter-spacing on h1 (-0.01em tightening)
+
+### Docs
+- Updated THEMING.md to reflect new typography token structure
+
 ## v2.1.0 - 2026-03-26
 
 ### Added

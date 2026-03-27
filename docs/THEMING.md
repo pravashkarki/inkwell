@@ -79,36 +79,36 @@ Two built-in font stacks in `token.json`:
 
 Set `"fontStack"` to `"serif"` or `"sans"`. You can also add your own stack to the `fontFamily` object and reference it by key.
 
-## Typography scale
+## Typography
 
-Four sizes defined in `token.json`:
+Body and code sizes are set directly in `token.json`:
+
+```json
+"bodySize": "1.125rem",
+"codeSize": "0.875rem"
+```
+
+- `bodySize` controls paragraph text. `1.125rem` (18px) is the default. Try `1rem` (16px) for denser text or `1.25rem` (20px) for larger.
+- `codeSize` controls inline code and code blocks.
+
+### Heading scale
+
+Four sizes for headings and metadata:
 
 ```json
 "scale": {
   "sm": "0.875rem",
-  "md": "1.125rem",
+  "md": "1.25rem",
   "lg": "1.5rem",
   "xl": "2rem"
 }
 ```
 
 Where they're used:
-- **sm** - dates, metadata
-- **md** - h3 headings
-- **lg** - body text, h2 headings (set via `"body": "lg"`)
-- **xl** - h1 headings
-
-To change the body text size, set `"body"` to any scale key:
-
-```json
-"body": "lg"
-```
-
-Code blocks use the same scale system. Set `"code"` to any scale key:
-
-```json
-"code": "sm"
-```
+- **sm** (14px) - dates, tags, metadata
+- **md** (20px) - h3 headings
+- **lg** (24px) - h2 headings
+- **xl** (32px) - h1 headings
 
 To scale everything up or down, adjust all four values together. Keep the ratios similar.
 
