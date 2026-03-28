@@ -96,12 +96,11 @@ function removeAnalytics() {
   // Remove from Base.astro
   let layout = readText(PATHS.baseLayout);
   layout = layout.replace(", analytics", "");
-  // Remove the GA snippet block
-  const snippetStart = layout.indexOf("{import.meta.env.PROD && analytics");
-  if (snippetStart !== -1) {
-    const snippetEnd = layout.indexOf(")}\n", snippetStart) + 3;
-    layout = layout.slice(0, snippetStart) + layout.slice(snippetEnd);
-  }
+  // Remove the GA snippet block (match opening tag through closing )}
+  layout = layout.replace(
+    /\s*\{import\.meta\.env\.PROD && analytics[\s\S]*?\)\}/,
+    "",
+  );
   writeText(PATHS.baseLayout, layout);
 
   console.log("Analytics removed.");

@@ -37,12 +37,8 @@ async function main() {
   if (await confirm(rl, "Build and deploy?")) {
     const { deployFlow } = await import("./deploy.js");
     const { run } = await import("./lib/utils.js");
-    try {
-      run("pnpm build");
-      await deployFlow(rl);
-    } catch (e) {
-      console.log("Build failed. Fix errors and try again.");
-    }
+    run("pnpm build");
+    await deployFlow(rl);
   }
 
   rl.close();

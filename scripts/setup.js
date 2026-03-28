@@ -1,4 +1,4 @@
-import { readdirSync, unlinkSync, existsSync } from "fs";
+import { readdirSync, rmSync, existsSync } from "fs";
 import { resolve } from "path";
 import {
   createRL,
@@ -32,25 +32,20 @@ function updateConfig(name, title, description, url) {
 function removeDemoContent() {
   let removed = 0;
 
-  // Remove demo posts
+  // Remove demo posts (including folder-per-post directories)
   if (existsSync(PATHS.posts)) {
-    const posts = readdirSync(PATHS.posts, { recursive: true });
-    for (const file of posts) {
-      const filePath = resolve(PATHS.posts, file);
-      try {
-        unlinkSync(filePath);
-        removed++;
-      } catch {
-        // skip directories
-      }
+    const entries = readdirSync(PATHS.posts);
+    for (const entry of entries) {
+      rmSync(resolve(PATHS.posts, entry), { recursive: true });
+      removed++;
     }
   }
 
   // Remove demo images
   if (existsSync(PATHS.images)) {
-    const images = readdirSync(PATHS.images);
-    for (const file of images) {
-      unlinkSync(resolve(PATHS.images, file));
+    const entries = readdirSync(PATHS.images);
+    for (const entry of entries) {
+      rmSync(resolve(PATHS.images, entry), { recursive: true });
       removed++;
     }
   }
@@ -108,7 +103,6 @@ async function main() {
 
   // Font stack
   const fontStack = await choose(rl, "Font stack:", ["serif", "sans"]);
-  tokens.typography = { ...readJSON(PATHS.tokenJson).typography, fontStack };
   const updatedTokens = readJSON(PATHS.tokenJson);
   updatedTokens.typography.fontStack = fontStack;
   writeJSON(PATHS.tokenJson, updatedTokens);
@@ -141,12 +135,8 @@ async function main() {
 
   // Deploy
   if (await confirm(rl, "Deploy now?")) {
-    try {
-      run("pnpm build");
-      await deployFlow(rl);
-    } catch {
-      console.log("Deploy failed. You can run `pnpm ik:deploy` later.");
-    }
+    run("pnpm build");
+    await deployFlow(rl);
   }
 
   console.log("\nSetup complete. Run `pnpm dev` to start writing.");
