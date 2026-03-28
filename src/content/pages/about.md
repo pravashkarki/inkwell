@@ -1,8 +1,8 @@
 ---
-title: About
-description: About this site.
+title: about
+description: about this site.
 ---
 
-This is your about page. Edit it at `src/content/pages/about.md`.
+this is your about page. edit it at `src/content/pages/about.md`.
 
-Write anything here in Markdown. Tell readers who you are, what you write about, and why.
+write anything here in markdown. tell readers who you are, what you write about, and why.
