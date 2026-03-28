@@ -9,7 +9,12 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "ik:new": "node scripts/new-post.js"
+    "ik:new": "node scripts/new-post.js",
+    "ik:setup": "node scripts/setup.js",
+    "ik:theme": "node scripts/theme.js",
+    "ik:deploy": "node scripts/deploy.js",
+    "ik:migrate": "node scripts/migrate.js",
+    "ik:analytics": "node scripts/analytics.js"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.17",
