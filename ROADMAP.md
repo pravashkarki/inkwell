@@ -4,6 +4,11 @@ what's planned for inkwell. focused on making it simpler for writers to set up, 
 
 ## planned
 
+### editor templates
+- iA Writer template (.iatemplate with frontmatter fields)
+- Obsidian template (note template with frontmatter)
+- VS Code snippet (inkwell-post scaffolder)
+
 ### documentation
 - quickstart guide ("blog live in 10 minutes")
 - editor guide (Obsidian, iA Writer, Typora, github.dev workflows)
