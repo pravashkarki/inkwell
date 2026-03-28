@@ -1,99 +1,144 @@
 # inkwell
 
-A blog template for writers. Markdown in, website out. No CMS, no database. Write, push, it's live.
+a blog template for writers. markdown in, website out. no CMS, no database. write, push, it's live.
 
-Every post is served as clean HTML for readers and raw Markdown for AI crawlers. Append `.md` to any post URL to get the source.
+every post is served as clean HTML for readers and raw markdown for AI crawlers. append `.md` to any post URL to get the source.
 
-**Deploy your own:**
+**deploy your own:**
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpravashkarki%2Finkwell)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/pravashkarki/inkwell)
+[![Deploy to Cloudflare Pages](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/pravashkarki/inkwell)
 
-**Note:** Demo posts are AI-generated for layout demonstration only.
+or self-host: `pnpm build` and upload the `dist/` folder to any server.
 
-## Quick start
+**note:** demo posts are AI-generated for layout demonstration only.
+
+## quick start
 
 ```
 pnpm install
+pnpm ik:setup
+```
+
+the setup wizard walks you through site name, color scheme, font, and deployment. or skip it and edit files directly:
+
+```
 pnpm dev
 ```
 
-## Create a post
+## CLI tools
+
+```
+pnpm ik:new          # create a new post (interactive or with args)
+pnpm ik:setup        # first-run wizard or settings menu
+pnpm ik:theme        # switch color scheme
+pnpm ik:deploy       # deploy via git push, CLI, or self-host (rsync/scp)
+pnpm ik:migrate      # move deployment to a different platform
+pnpm ik:analytics    # set up Google Analytics (runs via web worker)
+```
+
+### create a post
 
 ```
 pnpm ik:new
 ```
 
-Prompts for title, description, and tags. Generates the file with correct frontmatter.
-
-For posts with images, use the folder structure:
+prompts for title, description, and tags. for posts with images:
 
 ```
 pnpm ik:new -- --folder
 ```
 
-This creates `posts/my-post/index.md` so you can drop images alongside your markdown.
+### switch theme
 
-## Configure
+```
+pnpm ik:theme cool
+```
 
-Two files to edit:
+four built-in OKLCH schemes: `warm`, `cool`, `mono`, `forest`. run without args for interactive selection.
 
-- **`token.json`** - design tokens (colors, typography, spacing). Syncs with Figma.
+### deploy
+
+```
+pnpm ik:deploy
+```
+
+supports git push, Vercel/Cloudflare/Netlify CLI, and self-host (rsync or scp to your own server). use `pnpm ik:migrate` to switch platforms.
+
+### analytics
+
+```
+pnpm ik:analytics
+```
+
+adds Google Analytics with Partytown, which runs the tracking script in a web worker instead of the main thread. production builds only. remove with `pnpm ik:analytics --remove`.
+
+## configure
+
+two files to edit (or use `pnpm ik:setup`):
+
+- **`token.json`** - design tokens (colors, typography, spacing). syncs with Figma.
 - **`src/config.ts`** - site name, URL, description, and nav links.
 
-### Color schemes
+### navigation
 
-Four built-in OKLCH schemes: `warm`, `cool`, `mono`, `forest`. Set `scheme` in token.json.
-
-### Navigation
-
-Add header links in `src/config.ts`:
+add header links in `src/config.ts`:
 
 ```ts
 export const nav = [
-  { label: "About", href: "/about" },
-  { label: "Twitter", href: "https://twitter.com/you", external: true },
+  { label: "about", href: "/about" },
+  { label: "twitter", href: "https://twitter.com/you", external: true },
 ];
 ```
 
-## Features
+## features
 
-### For writers
-- **Tags** - optional `tags: [writing, thinking]` in frontmatter. Tag pages at `/tags/`
-- **Drafts** - add `draft: true` to hide a post from production. Visible in dev.
-- **Reading time** - estimated from word count, shown on every post
-- **Prev/next navigation** - links to adjacent posts at the bottom of each post
-- **Image colocation** - folder-per-post structure for posts with images
-- **Pagination** - homepage paginates at 10 posts per page
+### for writers
+- **tags** - optional `tags: [writing, thinking]` in frontmatter. tag pages at `/tags/`
+- **drafts** - add `draft: true` to hide a post from production. visible in dev.
+- **reading time** - estimated from word count, shown on every post
+- **prev/next navigation** - links to adjacent posts at the bottom of each post
+- **image colocation** - folder-per-post structure for posts with images
+- **pagination** - homepage paginates at 10 posts per page
 
-### For sharing
-- **Open Graph + Twitter cards** - every post renders properly when shared on social media
-- **Auto OG images** - 1200x630 PNG generated for each post. No manual image creation.
-- **Canonical URLs** - set on every page. Optional `canonicalUrl` field for cross-posting.
+### for sharing
+- **open graph + twitter cards** - every post renders properly when shared on social media
+- **auto OG images** - 1200x630 PNG generated for each post. no manual image creation.
+- **canonical URLs** - set on every page. optional `canonicalUrl` field for cross-posting.
 - **RSS feed** at `/rss.xml`
 
-### For SEO
-- **Sitemap** - auto-generated via @astrojs/sitemap
+### for SEO
+- **sitemap** - auto-generated via @astrojs/sitemap
 - **robots.txt** - points to sitemap
-- **Semantic HTML** - clean, accessible markup
+- **semantic HTML** - clean, accessible markup
 
-### For AI
-- **Raw Markdown** - every post available at `/posts/slug.md`
+### for AI
+- **raw markdown** - every post available at `/posts/slug.md`
 - **llms.txt** - site manifest for AI crawlers at `/llms.txt`
 - **posts.json** - structured API at `/posts.json`
 
-### Design
+### design
 - **OKLCH colors** - perceptually uniform, four schemes with light/dark mode
-- **Design tokens** - all values in token.json, injected as CSS custom properties
-- **Typography scale** - sm, md, lg, xl. Serif or sans font stack.
-- **Hot reload** - token.json changes update instantly in dev
+- **theme switcher** - toggle between light, dark, and system preference
+- **design tokens** - all values in token.json, injected as CSS custom properties
+- **typography scale** - sm, md, lg, xl. serif, sans, or mixed font stacks.
+- **hot reload** - token.json changes update instantly in dev
 
-## Frontmatter
+### accessibility
+- **WCAG 2.1 AA compliant** - contrast ratios, keyboard navigation, screen reader support
+- **skip to content** link
+- **focus visible** styles on all interactive elements
+- **prefers-reduced-motion** support
+- **aria labels** on navigation, theme toggle, and interactive elements
+
+## frontmatter
 
 ```yaml
 ---
-title: Your Post Title          # required
+title: your post title          # required
 date: 2026-03-15                # required
-description: A short summary.   # required, under 160 chars
+description: a short summary.   # required, under 160 chars
 tags: [writing, thinking]       # optional
 draft: true                     # optional, hides from production
 image: /images/cover.jpg        # optional, used as OG image
@@ -101,38 +146,44 @@ canonicalUrl: https://...       # optional, for cross-posting
 ---
 ```
 
-Only the first three fields are required. Everything else is opt-in.
+only the first three fields are required. everything else is opt-in.
 
-## Build and deploy
+## build and deploy
 
 ```
 pnpm build
 pnpm preview
 ```
 
-Push with `[build]` in the commit message to trigger Vercel:
+or use the deploy tool:
 
 ```
-git commit -m "[build] Add new post"
+pnpm ik:deploy
+```
+
+for git-push deploys, include `[build]` in the commit message:
+
+```
+git commit -m "[build] add new post"
 git push
 ```
 
-Commits without `[build]` are ignored by Vercel.
+commits without `[build]` are ignored by the deploy platform.
 
-## Docs
+## docs
 
-- [Writing a post](docs/WRITING.md) - creating posts, frontmatter, images, drafts
-- [Theming](docs/THEMING.md) - color schemes, OKLCH, typography, spacing, Figma sync
-- [Updating](docs/UPDATING.md) - pulling template updates without losing customizations
+- [writing a post](docs/WRITING.md) - creating posts, frontmatter, images, drafts
+- [theming](docs/THEMING.md) - color schemes, OKLCH, typography, spacing, Figma sync
+- [updating](docs/UPDATING.md) - pulling template updates without losing customizations
 
-## Roadmap
+## roadmap
 
-See [ROADMAP.md](ROADMAP.md) for planned features.
+see [ROADMAP.md](ROADMAP.md) for planned features.
 
-## Author
+## author
 
 [Pravo](https://www.linkedin.com/in/pravasho/)
 
-## License
+## license
 
 [MIT](LICENSE)
