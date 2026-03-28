@@ -4,6 +4,11 @@ what's planned for inkwell. focused on making it simpler for writers to set up, 
 
 ## planned
 
+### custom styles
+- `src/styles/custom.css` for user overrides (loads after global.css)
+- ships empty with comments showing overridable properties
+- template updates don't touch user customizations
+
 ### editor templates
 - iA Writer template (.iatemplate with frontmatter fields)
 - Obsidian template (note template with frontmatter)
