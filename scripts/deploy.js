@@ -15,7 +15,7 @@ import {
 } from "./lib/utils.js";
 import { vercelConfig, wranglerConfig, netlifyConfig } from "./lib/deploy-configs.js";
 
-const PLATFORMS = ["git", "vercel", "cloudflare", "netlify"];
+const PLATFORMS = ["git", "self-host", "vercel", "cloudflare", "netlify"];
 
 const CLI_DEPLOY_COMMANDS = {
   vercel: "npx vercel --prod",
@@ -30,7 +30,7 @@ const CONFIG_FILES = {
 };
 
 export function generateConfig(platform) {
-  if (platform === "git") return;
+  if (platform === "git" || platform === "self-host") return;
   if (platform === "vercel") {
     writeJSON(PATHS.vercelJson, vercelConfig());
   } else if (platform === "cloudflare") {
@@ -40,6 +40,38 @@ export function generateConfig(platform) {
     writeText(PATHS.netlifyToml, netlifyConfig());
   }
   console.log(`Generated ${platform} config.`);
+}
+
+async function selfHostDeploy(rl) {
+  const method = await choose(rl, "Upload method:", [
+    "rsync (SSH)",
+    "scp (SSH)",
+    "show me the output path",
+  ]);
+
+  if (method.startsWith("show")) {
+    const { resolve } = await import("path");
+    console.log(`\nYour site is ready at:\n  ${resolve("dist")}\n`);
+    console.log("Upload this folder to your server using any method (FTP, file manager, etc.).");
+    return;
+  }
+
+  const dest = await prompt(rl, "Server destination (user@host:/path/to/site): ");
+  if (!dest) {
+    console.log("No destination provided.");
+    return;
+  }
+
+  try {
+    if (method.startsWith("rsync")) {
+      run(`rsync -avz --delete dist/ ${dest}`);
+    } else {
+      run(`scp -r dist/* ${dest}`);
+    }
+    console.log("Upload complete.");
+  } catch {
+    console.log("Upload failed. Check your SSH access and destination path.");
+  }
 }
 
 function gitDeploy() {
@@ -76,16 +108,22 @@ export async function deployFlow(rl) {
       const method = await choose(rl, `Detected ${detected}. Deploy via:`, [
         "git push (recommended)",
         `${detected} CLI`,
+        "self-host (rsync to your server)",
       ]);
-      platform = method.startsWith("git") ? "git" : detected;
+      platform = method.startsWith("git") ? "git" : method.startsWith("self") ? "self-host" : detected;
     } else {
       platform = await choose(rl, "Deploy method:", PLATFORMS);
-      if (platform !== "git") generateConfig(platform);
+      if (platform !== "git" && platform !== "self-host") generateConfig(platform);
     }
   }
 
   if (platform === "git") {
     gitDeploy();
+    return;
+  }
+
+  if (platform === "self-host") {
+    await selfHostDeploy(rl);
     return;
   }
 

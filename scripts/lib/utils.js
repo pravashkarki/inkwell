@@ -74,11 +74,3 @@ export function detectPlatform() {
   if (existsSync(PATHS.netlifyToml)) return "netlify";
   return null;
 }
-
-export function isDefaultConfig() {
-  const content = readText(PATHS.config);
-  return (
-    content.includes('name: "inkwell"') &&
-    content.includes('url: "https://try-inkwell.vercel.app"')
-  );
-}
