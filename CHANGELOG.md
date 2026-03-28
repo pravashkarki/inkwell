@@ -1,5 +1,15 @@
 # Changelog
 
+## v2.3.0 - 2026-03-28
+
+### Added
+- `pnpm ik:setup` - interactive first-run wizard (site name, theme, font, git remote, demo cleanup, first post, deploy)
+- `pnpm ik:theme` - switch color scheme from CLI, with optional build and deploy
+- `pnpm ik:deploy` - deploy to Vercel, Cloudflare Pages, or Netlify with auto-detection on rerun
+- `pnpm ik:migrate` - move deployment between platforms (cleans old config, generates new)
+- `pnpm ik:analytics` - Google Analytics setup with Partytown web worker (production-only, `--remove` to undo)
+- Shared CLI utilities in `scripts/lib/` (prompts, file I/O, platform detection, deploy config templates)
+
 ## v2.2.0 - 2026-03-27
 
 ### Changed

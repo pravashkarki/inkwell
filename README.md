@@ -14,35 +14,68 @@ Every post is served as clean HTML for readers and raw Markdown for AI crawlers.
 
 ```
 pnpm install
+pnpm ik:setup
+```
+
+The setup wizard walks you through site name, color scheme, font, and deployment. Or skip it and edit files directly:
+
+```
 pnpm dev
 ```
 
-## Create a post
+## CLI tools
+
+```
+pnpm ik:new          # Create a new post (interactive or with args)
+pnpm ik:setup        # First-run wizard (config, theme, deploy, demo cleanup)
+pnpm ik:theme        # Switch color scheme
+pnpm ik:deploy       # Deploy to Vercel, Cloudflare Pages, or Netlify
+pnpm ik:migrate      # Move deployment to a different platform
+pnpm ik:analytics    # Set up Google Analytics (runs via web worker)
+```
+
+### Create a post
 
 ```
 pnpm ik:new
 ```
 
-Prompts for title, description, and tags. Generates the file with correct frontmatter.
-
-For posts with images, use the folder structure:
+Prompts for title, description, and tags. For posts with images:
 
 ```
 pnpm ik:new -- --folder
 ```
 
-This creates `posts/my-post/index.md` so you can drop images alongside your markdown.
+### Switch theme
+
+```
+pnpm ik:theme cool
+```
+
+Four built-in OKLCH schemes: `warm`, `cool`, `mono`, `forest`. Run without args for interactive selection.
+
+### Deploy
+
+```
+pnpm ik:deploy
+```
+
+First run asks which platform. After that, it redeploys to the same platform. Use `pnpm ik:migrate` to switch platforms.
+
+### Analytics
+
+```
+pnpm ik:analytics
+```
+
+Adds Google Analytics with Partytown, which runs the tracking script in a web worker instead of the main thread. Production builds only. Remove with `pnpm ik:analytics --remove`.
 
 ## Configure
 
-Two files to edit:
+Two files to edit (or use `pnpm ik:setup`):
 
 - **`token.json`** - design tokens (colors, typography, spacing). Syncs with Figma.
 - **`src/config.ts`** - site name, URL, description, and nav links.
-
-### Color schemes
-
-Four built-in OKLCH schemes: `warm`, `cool`, `mono`, `forest`. Set `scheme` in token.json.
 
 ### Navigation
 
@@ -110,14 +143,20 @@ pnpm build
 pnpm preview
 ```
 
-Push with `[build]` in the commit message to trigger Vercel:
+Or use the deploy tool:
+
+```
+pnpm ik:deploy
+```
+
+For git-push deploys, include `[build]` in the commit message:
 
 ```
 git commit -m "[build] Add new post"
 git push
 ```
 
-Commits without `[build]` are ignored by Vercel.
+Commits without `[build]` are ignored by the deploy platform.
 
 ## Docs
 

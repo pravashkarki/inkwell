@@ -4,15 +4,6 @@ What's planned for inkwell. Focused on making it simpler for writers to set up, 
 
 ## Planned
 
-### Setup tooling
-- `pnpm ik:setup` - interactive first-run wizard (site name, theme, font)
-- `pnpm ik:theme` - switch color scheme and font stack
-- `pnpm ik:deploy` - generate config for Vercel, Cloudflare Pages, or Netlify
-- `pnpm ik:analytics` - set up analytics (Cloudflare Web Analytics, Plausible, GA4)
-
-### Pages
-- About page / custom pages support (non-post markdown pages)
-
 ### Documentation
 - Quickstart guide ("blog live in 10 minutes")
 - Editor guide (Obsidian, iA Writer, Typora, github.dev workflows)
@@ -26,6 +17,18 @@ What's planned for inkwell. Focused on making it simpler for writers to set up, 
 - Post series (multi-part posts with navigation)
 - Table of contents (auto-generated from headings)
 - JSON Feed
+
+## Done
+
+### Setup tooling
+- `pnpm ik:setup` - interactive first-run wizard (site name, theme, font, git remote, demo cleanup, first post, deploy)
+- `pnpm ik:theme` - switch color scheme with optional build and deploy
+- `pnpm ik:deploy` - deploy to Vercel, Cloudflare Pages, or Netlify
+- `pnpm ik:migrate` - move deployment between platforms
+- `pnpm ik:analytics` - Google Analytics with Partytown (web worker, production-only)
+
+### Pages
+- About page / custom pages support (non-post markdown pages)
 
 ## Not planned
 
